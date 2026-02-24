@@ -1,0 +1,151 @@
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eaeaea;
+  min-height: 100vh;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 15, 20, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+/* NORMAL NAV LINKS ONLY (EXCLUDES LOGO) */
+nav a:not(.nav-logo) {
+  color: #bfcbd6;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* underline animation */
+nav a:not(.nav-logo)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #00e5ff;
+  transition: width 0.3s ease;
+}
+
+nav a:not(.nav-logo):hover {
+  color: #ffffff;
+}
+
+nav a:not(.nav-logo):hover::after {
+  width: 100%;
+}
+
+nav a.active:not(.nav-logo) {
+  color: #00e5ff;
+}
+
+nav a.active:not(.nav-logo)::after {
+  width: 100%;
+}
+
+/* ---------- LOGO STYLES ---------- */
+.nav-logo {
+  margin-right: 32px;
+}
+
+.nav-logo::after {
+  display: none;
+}
+
+.nav-logo img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.9);
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px 40px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- HEADINGS ---------- */
+h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #00e5ff, #00bcd4);
+  color: #00343a;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.35);
+}
+
+/* ---------- 404 ---------- */
+.not-found {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.not-found h1 {
+  font-size: 64px;
+  color: #00e5ff;
+}
+/* ---------- NAV STRUCTURE FIX ---------- */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
